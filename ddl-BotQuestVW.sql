@@ -9,17 +9,24 @@ CREATE TABLE tb_setor(
     PRIMARY KEY (id)
 );
 
+CREATE TABLE tb_tipoUsuario(
+    id BINARY(16) NOT NULL,
+   nome VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE tb_usuario(
 	id BINARY(16) NOT NULL,
+    id_tipoUsuario BINARY(16) NOT NULL,
     id_setor BINARY(16) NOT NULL,
-    tipo_usuario TINYINT NOT NULL,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
     vwId INT NOT NULL UNIQUE,
     dataNascimento DATETIME NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY ( id_setor) REFERENCES tb_setor(id)
+    FOREIGN KEY ( id_setor) REFERENCES tb_setor(id),
+	FOREIGN KEY (id_tipoUsuario) REFERENCES tb_tipoUsuario(id)
 );
 
 CREATE TABLE tb_pergunta(
