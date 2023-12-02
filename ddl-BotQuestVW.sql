@@ -9,7 +9,7 @@ CREATE TABLE tb_setor(
     PRIMARY KEY (id)
 );
 
-CREATE TABLE tb_tipoUsuario(
+CREATE TABLE tb_tipousuario(
     id BINARY(16) NOT NULL,
    nome VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
@@ -17,7 +17,7 @@ CREATE TABLE tb_tipoUsuario(
 
 CREATE TABLE tb_usuario(
 	id BINARY(16) NOT NULL,
-    id_tipoUsuario BINARY(16) NOT NULL,
+    id_tipousuario BINARY(16) NOT NULL,
     id_setor BINARY(16) NOT NULL,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
@@ -26,7 +26,7 @@ CREATE TABLE tb_usuario(
     dataNascimento DATETIME NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY ( id_setor) REFERENCES tb_setor(id),
-	FOREIGN KEY (id_tipoUsuario) REFERENCES tb_tipoUsuario(id)
+	FOREIGN KEY (id_tipousuario) REFERENCES tb_tipousuario(id)
 );
 
 CREATE TABLE tb_pergunta(

@@ -30,15 +30,15 @@ INSERT INTO tb_setor VALUES (
     "Logística"
 );
 
-INSERT INTO tb_tipoUsuario VALUES (
+INSERT INTO tb_tipousuario VALUES (
 	UUID_TO_BIN(UUID()),
     "Comum"
 );
 
-INSERT INTO tb_tipoUsuario VALUES (
+INSERT INTO tb_tipousuario VALUES (
 	UUID_TO_BIN(UUID()),
     "Admin"
 );
 
 SELECT * FROM tb_setor;
-SELECT * FROM tb_tipoUsuario;
+SELECT * FROM tb_tipousuario;
