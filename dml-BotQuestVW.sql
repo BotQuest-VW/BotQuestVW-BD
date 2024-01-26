@@ -30,6 +30,9 @@ INSERT INTO tb_setor VALUES (
     "Logística"
 );
 
+SELECT * FROM tb_setor;
+SELECT BIN_TO_UUID(id), nome FROM tb_setor;
+
 INSERT INTO tb_tipousuario VALUES (
 	UUID_TO_BIN(UUID()),
     "Comum"
@@ -40,5 +43,17 @@ INSERT INTO tb_tipousuario VALUES (
     "Admin"
 );
 
-SELECT * FROM tb_setor;
 SELECT * FROM tb_tipousuario;
+
+INSERT INTO tb_usuario VALUES (
+	UUID_TO_BIN(UUID()),
+    UUID_TO_BIN('a755f65c-bc65-11ee-b933-60189550df52'),
+    "André Brisido",
+    "andre@email.com",
+    "mayaeluna123",
+    "12345",
+    "2004-10-09 15:34:22",
+    ""
+);
+
+SELECT * FROM tb_usuario;
