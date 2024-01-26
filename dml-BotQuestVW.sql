@@ -44,10 +44,11 @@ INSERT INTO tb_tipousuario VALUES (
 );
 
 SELECT * FROM tb_tipousuario;
+SELECT BIN_TO_UUID(id), tituloUsuario FROM tb_tipousuario;
 
 INSERT INTO tb_usuario VALUES (
 	UUID_TO_BIN(UUID()),
-    UUID_TO_BIN('a755f65c-bc65-11ee-b933-60189550df52'),
+    UUID_TO_BIN('116a1143-bc6d-11ee-951d-b445067b7f91'),
     "André Brisido",
     "andre@email.com",
     "mayaeluna123",

@@ -11,20 +11,14 @@ CREATE TABLE tb_setor(
     PRIMARY KEY (id)
 );
 
-CREATE TABLE tb_tipousuario(
-	id BINARY(16) NOT NULL,
-    tituloUsuario VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
-);
-
 CREATE TABLE tb_usuario(
 	id BINARY(16) NOT NULL,
     id_setor BINARY(16) NOT NULL,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
-    vwId INT NOT NULL UNIQUE,
-    dataNascimento DATETIME NOT NULL,
+    vw_id INT NOT NULL UNIQUE,
+    data_nascimento DATETIME NOT NULL,
     url_img VARCHAR(255),
     PRIMARY KEY (id),
     FOREIGN KEY (id_setor) REFERENCES tb_setor(id)
